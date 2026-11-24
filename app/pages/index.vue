@@ -2,6 +2,8 @@
 import type { BlogPostProps } from '@nuxt/ui'
 import { faker } from '@faker-js/faker';
 
+let data = $fetch('http://localhost:8000/')
+
 const posts = ref<BlogPostProps[]>([
   {
     title: 'Nuxt Icon v1',
@@ -30,6 +32,7 @@ for(let i=0; i<20; i++){
         date: faker.date.past(),
     });
 }
+
 </script>
 <template>
   <UBlogPosts class="lg:grid-cols-4">
